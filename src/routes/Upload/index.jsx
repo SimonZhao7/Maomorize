@@ -1,16 +1,33 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Upload.css';
+import { collection, addDoc, serverTimestamp } from 'firebase/firestore';
+import { db } from '../../../firebase';
 
 const Upload = () => {
-	// State variable to store the input text
+	// State variables to store input text and user ID
 	const [inputText, setInputText] = useState('');
+	const [userId, setUserId] = useState('user123'); // Replace 'user123' with the actual user ID
 
-	// Function to handle the button click and save the input text
-	const handleButtonClick = () => {
+	// Asynchronous function to handle the button click and save the input text
+	const handleButtonClick = async () => {
 		// You can perform any additional logic or validation here before saving
 		const savedText = inputText;
-		console.log('Text saved:', savedText);
-		// You can use 'savedText' as needed in your component or pass it to other functions/components
+
+		// Save the text to Firestore
+		// Save the text to the 'notes' collection
+		const notesCollection = collection(db, 'notes');
+
+		// Add a new document to the 'notes' collection with additional fields
+		await addDoc(notesCollection, {
+			userId: userId,
+			text: savedText,
+			dateCreated: serverTimestamp(),
+			lastStudied: null, // Default value is null
+			nextStudy: null, // Default value is null
+			interval: 0, // Default value is 0
+		});
+
+		console.log('Text saved to Firestore:', savedText);
 	};
 
 	// Function to count words and characters
@@ -34,11 +51,10 @@ const Upload = () => {
 				value={inputText}
 				onChange={(e) => {
 					setInputText(e.target.value);
-					console.log('Text saved:', setInputText);
 				}}
 			/>
 
-			{/* Button to trigger saving */}
+			{/* Button to trigger saving with optional custom document ID */}
 			<button onClick={handleButtonClick}>Submit for Review</button>
 
 			{/* Display word and character count */}
