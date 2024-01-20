@@ -1,0 +1,42 @@
+/* View.css */
+
+/* Style for the h1 element */
+.view-container h1 {
+	text-align: center; /* Center the h1 element */
+	margin-top: 10px; /* Adjust the margin-top value to position near the top */
+}
+
+/* Style for the container of user documents */
+.view-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 20px; /* Adjust the margin-top value based on your preference */
+}
+
+/* Style for the list of user documents */
+.document-list {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+/* Style for each document box */
+.document-box {
+	border: 1px solid #ccc;
+	padding: 16px;
+	margin: 15px;
+	width: 200px;
+	height: 200px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+	text-align: center;
+}
+
+/* Style for the document title */
+.document-box strong {
+	display: block;
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 8px;
+	text-align: left; /* Align the title to the left */
+}
