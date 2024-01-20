@@ -2,23 +2,23 @@
 
 /* Style for the h1 element */
 .view-container h1 {
-	text-align: center; /* Center the h1 element */
-	margin-top: 10px; /* Adjust the margin-top value to position near the top */
+	text-align: center;
+	margin-top: 10px;
 }
 
 /* Style for the container of user documents */
 .view-container {
 	display: flex;
-	flex-direction: row; /* Change from column to row */
-	align-items: flex-start;
-	margin-top: 20px; /* Adjust the margin-top value based on your preference */
+	flex-direction: column; /* Change from row to column */
+	align-items: center; /* Center items horizontally */
+	margin-top: 20px;
 }
 
 /* Style for the grid container */
 .document-grid {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between; /* Ensure space between columns */
+	justify-content: center; /* Center items horizontally */
 }
 
 /* Style for the first column (Add New Document) */
@@ -44,8 +44,8 @@
 /* Style for the second column (User Documents) */
 .document-list {
 	display: flex;
-	flex-direction: column; /* Change from row to column */
-	justify-content: flex-start;
+	flex-wrap: wrap;
+	justify-content: center; /* Center items horizontally */
 	flex: 1; /* Take remaining width */
 }
 
