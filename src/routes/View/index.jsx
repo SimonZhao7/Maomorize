@@ -4,8 +4,8 @@ import { useState, useEffect } from 'react';
 import './View.css';
 import { collection, getDocs, where, query } from 'firebase/firestore';
 import { db } from '../../../firebase';
+import { Link } from 'react-router-dom';
 
-//! Change this once we have userId working
 const View = ({ userId }) => {
 	const [userDocuments, setUserDocuments] = useState([]);
 
@@ -50,6 +50,16 @@ const View = ({ userId }) => {
 			) : (
 				<p>No documents found for the user.</p>
 			)}
+
+			{/* Box for adding a new document */}
+			<div>
+				<h2 className='add-document-box'>
+					Add New Document
+					<Link to='/Upload'>
+						<button>Add Document</button>
+					</Link>
+				</h2>
+			</div>
 		</div>
 	);
 };
