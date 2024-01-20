@@ -1,0 +1,37 @@
+.main {
+    display: flex;
+    height: 100%;
+    padding-top: 60px;
+}
+
+#notebox {
+    flex: 3;
+    border: none;
+    outline: none;
+    padding: 20px;
+    padding: 40px;
+    font-size: 16px;
+    font-family: 'Boboto', sans-serif;
+}
+
+.blurt-wrapper {
+    flex: 2;
+    padding: 70px 60px;
+    background-color: var(--light-gray);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.blurt-header {
+    font-size: 48px;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+}
+
+.blurt-desc {
+    font-size: 16px;
+    font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+}
