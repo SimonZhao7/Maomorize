@@ -8,6 +8,11 @@
 	padding-top: 60px;
 }
 
+.heading {
+	text-align: center; /* Center the title */
+	margin-top: 10px;
+}
+
 /* Style for the text input and textarea */
 label {
 	font-size: 18px;
