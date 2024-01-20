@@ -1,0 +1,14 @@
+.navbar {
+    width: 100%;
+    height: 60px;
+    background-color: var(--purple);
+    list-style: none;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    position: absolute;
+    top: 0;
+}
+
+

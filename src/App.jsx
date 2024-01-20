@@ -1,9 +1,7 @@
 import * as React from "react";
-import * as ReactDOM from "react-dom";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Upload from './routes/Upload';
-
-import "./App.css";
+import Upload from "./routes/Upload";
+import Review from "./routes/Review";
 
 const router = createBrowserRouter([
   {
@@ -15,6 +13,10 @@ const router = createBrowserRouter([
         element: <Upload />,
       },
     ],
+  },
+  {
+    path: "/review",
+    element: <Review />,
   },
 ]);
 
