@@ -2,12 +2,9 @@
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
-
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-
-  font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -16,8 +13,9 @@
 a {
   font-weight: 500;
   color: #646cff;
-  text-decoration: inherit;
+  text-decoration: none;
 }
+
 a:hover {
   color: #535bf2;
 }
@@ -28,41 +26,255 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  background: -moz-linear-gradient(45deg, #8c05c2 0%, #a726f2 29%, #8b05c4 66%, #9f79ff 100%);
+  background: -webkit-linear-gradient(45deg, #a502e1 0%, #26c9f2 29%, #9e03d2 66%, #9f79ff 100%);
+  background: linear-gradient(45deg, #8802e1 0%, #9626f2 29%, #9c11f2 66%, #9f79ff 100%);
+  background-size: 400% 400%;
+  -webkit-animation: Gradient 15s ease infinite;
+  -moz-animation: Gradient 15s ease infinite;
+  animation: Gradient 15s ease infinite;
+  min-height: calc(100vh - 2rem);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: space-evenly;
+  overflow: hidden;
+  position: relative;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+.headline {
+  position: absolute;
+  left: 80px;
+  top: 130px; /* Adjust the top position if necessary */
+  text-align: left;
+  color: white;
+  font-size: 53px;
+  font-family: Arial, sans-serif;
 }
 
-button {
+.sub_headline {
+  position: absolute;
+  left: 80px;
+  top: 420px; /* Adjust the top position if necessary */
+  text-align: left;
+  color: rgb(198, 194, 194);
+  font-size: 22px;
+  font-family: Arial, sans-serif;
+}
+
+.logo {
+  position: absolute;
+  top: 10px; /* Adjust the top position if necessary */
+  text-align: left;
+  left: 50px;
+  color: rgb(255, 255, 255);
+  font-size: 22px;
+  font-family: Arial, sans-serif;
+}
+
+.no_acc {
+  position: absolute;
+  left: 80px;
+  top: 540px; /* Adjust the top position if necessary */
+  text-align: left;
+  color: white;
+  font-size: 17px;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  z-index: 2; /* Ensure it's above other elements */
+}.button-container {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+}
+
+.header {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  z-index: 2;
+}
+
+.sign-up {
+  white-space: nowrap; /* Prevent text from wrapping */
+  position: absolute;
+  top: 540px;
+  left: 320px;
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #3d225b;
+  color: white;
   cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  transition: border-color 0.25s, background-color 0.25s, color 0.25s;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.sign-up:hover {
+  border-color: white;
+  background-color: white;
+  color: #ac64ff;
+}
+
+.sign-in {
+  white-space: nowrap; /* Prevent text from wrapping */
+  position: absolute;
+  left: -120px;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: white;
+  color: #ac64ff;
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.25s, color 0.25s;
+}
+
+.sign-in:hover {
+  border-color: #3d225b;
+  background-color: #3d225b;
+  color: white;
+}
+
+.go-to-maomorize {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #3d225b;
+  color: white;
+  cursor: pointer;
+  transition: border-color 0.25s, background-color 0.25s, color 0.25s;
+}
+
+.go-to-maomorize:hover {
+  border-color: white;
+  background-color: white;
+  color: #ac64ff;
+}
+
+
+body::before,
+body::after {
+  content: "";
+  width: 70vmax;
+  height: 70vmax;
+  position: absolute;
+  background: rgba(255, 255, 255, 0.07);
+  left: -20vmin;
+  top: -20vmin;
+  animation: morph 15s linear infinite alternate, spin 20s linear infinite;
+  z-index: 1;
+  will-change: border-radius, transform;
+  transform-origin: 30% 30%;
+  pointer-events: none;
+}
+
+body::after {
+  width: 70vmin;
+  height: 70vmin;
+  left: auto;
+  right: -10vmin;
+  top: auto;
+  bottom: 0;
+  animation: morph 10s linear infinite alternate, spin 26s linear infinite reverse;
+  transform-origin: 10% 10%;
+}
+
+@keyframes typing {
+  from {
+    max-width: 0;
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
+  to {
+    max-width: 100%;
   }
 }
+
+.typing-text {
+  left: 700px;
+  overflow: hidden;
+  white-space: nowrap;
+  display: inline-block;
+  animation: typing 2s steps(40, end) infinite;
+  color:#522a80;
+}
+
+@-webkit-keyframes Gradient {
+0% {
+  background-position: 0 50%
+}
+50% {
+  background-position: 100% 50%
+}
+100% {
+  background-position: 0 50%
+}
+}
+
+@-moz-keyframes Gradient {
+0% {
+  background-position: 0 50%
+}
+50% {
+  background-position: 100% 50%
+}
+100% {
+  background-position: 0 50%
+}
+}
+
+@keyframes Gradient {
+0% {
+  background-position: 0 50%
+}
+50% {
+  background-position: 100% 50%
+}
+100% {
+  background-position: 0 50%
+}
+}
+
+@keyframes morph {
+0% {
+  border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%; }
+100% {
+  border-radius: 40% 60%; } 
+}
+
+@keyframes spin {
+to {
+  transform: rotate(1turn); 
+} 
+}
+.st0{display:none;}
+.st1{display:inline;}
+.st2{opacity:0.29;}
+.st3{fill:#FFFFFF;}
+.st4{clip-path:url(#SVGID_2_);fill:#FFFFFF;}
+.st5{clip-path:url(#SVGID_4_);}
+.st6{clip-path:url(#SVGID_6_);}
+.st7{clip-path:url(#SVGID_8_);}
+.st8{clip-path:url(#SVGID_10_);}
+.st9{fill:none;}
+.st10{clip-path:url(#SVGID_12_);}
+.st11{opacity:0.7;}
+.st12{clip-path:url(#SVGID_14_);}
+.st13{opacity:0.2;}
+.st14{clip-path:url(#SVGID_16_);}
+.st15{opacity:0.3;fill:#FFFFFF;enable-background:new    ;}
+

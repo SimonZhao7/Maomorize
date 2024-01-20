@@ -3,7 +3,6 @@ import * as ReactDOM from "react-dom";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Upload from './routes/Upload';
 
-import "./App.css";
 
 const router = createBrowserRouter([
   {
