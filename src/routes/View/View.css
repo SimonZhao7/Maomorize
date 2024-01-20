@@ -9,16 +9,44 @@
 /* Style for the container of user documents */
 .view-container {
 	display: flex;
-	flex-direction: column;
-	align-items: center;
+	flex-direction: row; /* Change from column to row */
+	align-items: flex-start;
 	margin-top: 20px; /* Adjust the margin-top value based on your preference */
 }
 
-/* Style for the list of user documents */
-.document-list {
+/* Style for the grid container */
+.document-grid {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: space-between; /* Ensure space between columns */
+}
+
+/* Style for the first column (Add New Document) */
+.add-document-box {
+	border: 1px solid #ccc;
+	padding: 16px;
+	margin: 15px;
+	width: 200px;
+	height: 200px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+	text-align: center;
+}
+
+/* Style for the "Add New Document" title */
+.add-document-box h2 {
+	display: block;
+	font-size: 16px;
+	font-weight: bold;
+	margin-bottom: 8px;
+	text-align: left; /* Align the title to the left */
+}
+
+/* Style for the second column (User Documents) */
+.document-list {
+	display: flex;
+	flex-direction: column; /* Change from row to column */
+	justify-content: flex-start;
+	flex: 1; /* Take remaining width */
 }
 
 /* Style for each document box */
