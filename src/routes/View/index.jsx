@@ -5,6 +5,7 @@ import './View.css';
 import { collection, getDocs, where, query } from 'firebase/firestore';
 import { db } from '../../../firebase';
 
+//! Change this once we have userId working
 const View = ({ userId }) => {
 	const [userDocuments, setUserDocuments] = useState([]);
 
