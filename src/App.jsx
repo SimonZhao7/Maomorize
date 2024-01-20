@@ -1,25 +1,27 @@
-import * as React from "react";
-import * as ReactDOM from "react-dom";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Upload from './routes/Upload';
-
-import "./App.css";
+import View from './routes/View';
+import './App.css';
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: null,
-    children: [
-      {
-        path: "upload",
-        element: <Upload />,
-      },
-    ],
-  },
+	{
+		path: '/',
+		element: null,
+		children: [
+			{
+				path: 'upload',
+				element: <Upload />,
+			},
+			{
+				path: 'view',
+				element: <View />,
+			},
+		],
+	},
 ]);
 
 const App = () => {
-  return <RouterProvider router={router} />;
+	return <RouterProvider router={router} />;
 };
 
 export default App;
