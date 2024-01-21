@@ -99,3 +99,20 @@
 	font-size: 16px;
 	margin: 8px 0;
 }
+
+.hidden {
+	display: none;
+}
+
+.upload-action-wrapper {
+	display: flex;
+	gap: 15px;
+}
+
+.upload-blue-btn {
+	background-color: #1c9bc5;
+}
+
+.upload-blue-btn:hover {
+	background-color: #167FA2;;
+}

@@ -13,6 +13,7 @@ import ViewNote from "./routes/ViewNote";
 // Loaders
 import { loader as feedbackLoader } from "./routes/Feedback";
 import { loader as viewNoteLoader } from "./routes/ViewNote";
+import { loader as reviewLoader } from "./routes/Review";
 
 const router = createBrowserRouter([
   {
@@ -36,8 +37,9 @@ const router = createBrowserRouter([
     element: <Login />,
   },
   {
-    path: "/review",
+    path: "/review/:id",
     element: <Review />,
+    loader: reviewLoader,
   },
   {
     path: "/forgot",
