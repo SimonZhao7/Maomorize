@@ -2974,37 +2974,43 @@ const Landing = () => {
 				</g>
 			</svg>
 
-			<div class='container'>
-				<div class='headline-container'>
-					<p class='headline1'>Purrfect your memory</p>
-
-					<p class='headline2'>skills & study habits with</p>
-
-					<p class='typing-text'>Maomorize</p>
+			<div className='container'>
+				<div className='headline-container'>
+					<p className='headline1'>Purrfect your memory</p>
+					<p className='headline2'>skills & study habits with</p>
+					<p className='typing-text'>Maomorize</p>
 				</div>
 
-				<p class='sub_headline1'>Elevate your learning experience with fun</p>
+				<p className='sub_headline1'>
+					Elevate your learning experience with fun
+				</p>
+				<p className='sub_headline2'>and effective techniques</p>
 
-				<p class='sub_headline2'>and effective techniques</p>
+				<p className='no_acc'> Don't have an account? </p>
 
-				<p class='no_acc'> Don't have an account? </p>
-				<div class='button-container'>
-					<button class='sign-up'>Sign up for free!</button>
+				<div className='button-container'>
+					<a href='/signup' className='sign-up'>
+						Sign up for free!
+					</a>
 				</div>
 
 				<nav className='landing-nav'>
 					<div className='logo-wrapper'>
 						<img
-							class='logo_img'
+							className='logo_img'
 							src='/src/assets/imgs/maomorize_logo.png'
 							alt='Logo Img'
 						/>
-						<p class='logo'> Maomorize </p>
+						<p className='logo'> Maomorize </p>
 					</div>
 
-					<div class='header'>
-						<button class='sign-in'>Sign In</button>
-						<button class='go-to-maomorize'>Go to Maomorize</button>
+					<div className='header'>
+						<a href='/signin' className='sign-in'>
+							Sign In
+						</a>
+						<a href='/view' className='go-to-maomorize'>
+							Go to Maomorize
+						</a>
 					</div>
 				</nav>
 			</div>
