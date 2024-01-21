@@ -40,43 +40,45 @@ const Login = () => {
   };
 
   return (
-    <div className="mao-background"> 
-    
-    <div className="login-container">
-     
-    <div className="login-form">
-      <div className="maomorize-text"> Maomorize </div>
+    <div className="mao-background">
+      <div className="login-container">
+        <div className="login-form">
+          <div className="maomorize-text"> Maomorize </div>
 
-      <div className="input-group">
-        <input
-          type="email"
-          placeholder="Email"
-          onChange={(e) => setEmail(e.target.value)}
-        />
+          <div className="input-group">
+            <input
+              type="email"
+              className="login-input"
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+
+          <div className="input-group">
+            <input
+              className="login-input"
+              type="password"
+              placeholder="Password"
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+
+          <button className="login-button" onClick={handleLogin}>
+            Login
+          </button>
+          <button className="continue-button" onClick={handleGoogleLogin}>
+            Continue with Google
+          </button>
+
+          {/* Link to Forgot Password */}
+          <div className="forgot-password-link">
+            <Link to="/Forgot">Forgot Password?</Link>
+          </div>
+
+          <div className="login-cat"> </div>
+          <div className="speech-bubble"> </div>
+        </div>
       </div>
-
-      <div className="input-group">
-        <input
-          type="password"
-          placeholder="Password"
-          onChange={(e) => setPassword(e.target.value)}
-        />
-      </div>
-
-      <button className="login-button" onClick={handleLogin}>Login</button>
-      <button className="continue-button" onClick={handleGoogleLogin}>Continue with Google</button>
-
-      {/* Link to Forgot Password */}
-      <div className="forgot-password-link">
-        <Link to="/Forgot">Forgot Password?</Link>
-      </div>
-
-    <div className="login-cat"> </div>
-    <div className="speech-bubble"> </div>
-
-      
-    </div>
-    </div>
     </div>
   );
 };
