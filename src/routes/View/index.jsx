@@ -1,8 +1,9 @@
 // View.jsx
+import { format } from 'date-fns';
 
 import { useState, useEffect } from 'react';
 import './View.css';
-import Navbar from "../../components/Navbar";
+import Navbar from '../../components/Navbar';
 import { collection, getDocs, where, query } from 'firebase/firestore';
 import { db, auth } from '../../../firebase'; // Assuming auth is the Firebase authentication instance
 import { Link } from 'react-router-dom';
@@ -11,7 +12,6 @@ const View = () => {
 	const [userDocuments, setUserDocuments] = useState([]);
 	const [userId, setUserId] = useState(null);
 
-	
 	useEffect(() => {
 		const unsubscribe = auth.onAuthStateChanged((user) => {
 			if (user) {
@@ -45,44 +45,44 @@ const View = () => {
 	};
 
 	return (
-		<div className="view-wrapper">
-		<Navbar/>
-		<div className='view-container'>
-			{/* Heading */}
-			<h1>View Page</h1>
+		<div className='view-wrapper'>
+			<Navbar />
+			<div className='view-container'>
+				{/* Heading */}
+				<h1>View Page</h1>
 
-			{/* Display user documents */}
-			{userDocuments.length > 0 ? (
-				<div className='document-list'>
-					{userDocuments.map((document) => (
-						<div key={document.id} className='document-box'>
-							{document.title}
-							<br />
-							<strong>Text:</strong> {document.text}
-						</div>
-						// Change Text to studyNext after implementing the timestamp
-					))}
+				{/* Display user documents */}
+				{userDocuments.length > 0 ? (
+					<div className='document-list'>
+						{userDocuments.map((document) => (
+							<div key={document.id} className='document-box'>
+								{document.title}
+
+								<div className='next-study-date'>
+									<strong>Next Study Date:</strong>{' '}
+									{document.nextStudied
+										? format(document.nextStudied.toDate(), 'MM/dd/yyyy')
+										: 'No date available'}
+								</div>
+							</div>
+						))}
+					</div>
+				) : (
+					<p>No documents found for the user.</p>
+				)}
+
+				{/* Box for adding a new document */}
+				<div>
+					<h2 className='add-document-box'>
+						Add New Document
+						<Link to='/Upload'>
+							<button className='add-button'> + </button>
+						</Link>
+					</h2>
 				</div>
-			) : (
-				<p>No documents found for the user.</p>
-			)}
-
-			
-
-			{/* Box for adding a new document */}
-			<div>
-				<h2 className='add-document-box'>
-					Add New Document
-					<Link to='/Upload'>
-						<button class="add-button"> + </button>
-					</Link>
-				</h2>
 			</div>
-		</div>
 		</div>
 	);
 };
 
 export default View;
-
-
