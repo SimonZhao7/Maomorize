@@ -7,6 +7,8 @@ import Navbar from "../../components/Navbar";
 import { useNavigate } from "react-router-dom";
 import { collection, getDocs, where, query } from "firebase/firestore";
 import { db, auth } from "../../../firebase"; // Assuming auth is the Firebase authentication instance
+// React Icons
+import { FiPlusCircle } from "react-icons/fi";
 import { Link } from "react-router-dom";
 
 const View = () => {
@@ -50,13 +52,14 @@ const View = () => {
     <div className="view-wrapper">
       <Navbar />
       <div className="view-container">
-        {/* Heading */}
-        <h1>View Page</h1>
-
-        {/* Display user documents */}
-        {userDocuments.length > 0 ? (
-          <div className="document-list">
-            {userDocuments.map((document) => (
+        <h1 className="view-h1">Notes</h1>
+        <div className="view-grid">
+          <div className="add-document-box" onClick={() => navigate("/upload")}>
+            <h2>Add New Document</h2>
+            <FiPlusCircle size={50} />
+          </div>
+          {userDocuments.length > 0 ? (
+            userDocuments.map((document) => (
               <div
                 key={document.id}
                 className="document-box"
@@ -73,21 +76,12 @@ const View = () => {
                     : "No date available"}
                 </div>
               </div>
-            ))}
-          </div>
-        ) : (
-          <p>No documents found for the user.</p>
-        )}
-
-        {/* Box for adding a new document */}
-        <div>
-          <h2 className="add-document-box">
-            Add New Document
-            <Link to="/Upload">
-              <button className="add-button"> + </button>
-            </Link>
-          </h2>
+            ))
+          ) : (
+            <p>No documents found for the user.</p>
+          )}
         </div>
+        {/* Box for adding a new document */}
       </div>
     </div>
   );
