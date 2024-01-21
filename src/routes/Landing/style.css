@@ -21,26 +21,55 @@
     margin: 0;
   }
   
-  .headline {
+  .headline1 {
+    margin-bottom: 20px;
     position: absolute;
     left: 80px;
-    top: 130px; /* Adjust the top position if necessary */
+    top: 160px; /* Adjust the top position if necessary */
+    text-align: left;
+    color: white;
+    font-size: 53px;
+    font-family: Arial, sans-serif;
+  }
+
+  .headline2 {
+    margin-bottom: 20px;
+    position: absolute;
+    left: 80px;
+    top: 240px; /* Adjust the top position if necessary */
     text-align: left;
     color: white;
     font-size: 53px;
     font-family: Arial, sans-serif;
   }
   
-  .sub_headline {
+  .sub_headline1 {
     position: absolute;
     left: 80px;
-    top: 420px; /* Adjust the top position if necessary */
+    top: 425px; /* Adjust the top position if necessary */
+    text-align: left;
+    color: rgb(198, 194, 194);
+    font-size: 22px;
+    font-family: Arial, sans-serif;
+  }
+
+  .sub_headline2 {
+    position: absolute;
+    left: 80px;
+    top: 465px; /* Adjust the top position if necessary */
     text-align: left;
     color: rgb(198, 194, 194);
     font-size: 22px;
     font-family: Arial, sans-serif;
   }
   
+  .logo_img {
+    position: absolute;
+    top: -300px;
+    width: 2px; /* Adjust the width as needed */
+    height: auto; /* Maintain aspect ratio */
+  }
+
   .logo {
     position: absolute;
     top: 10px; /* Adjust the top position if necessary */
@@ -54,7 +83,7 @@
   .no_acc {
     position: absolute;
     left: 80px;
-    top: 540px; /* Adjust the top position if necessary */
+    top: 545px; /* Adjust the top position if necessary */
     text-align: left;
     color: white;
     font-size: 17px;
@@ -67,7 +96,9 @@
     right: 10px;
     display: flex;
     z-index: 2; /* Ensure it's above other elements */
-  }.button-container {
+  }
+  
+  .button-container {
     position: absolute;
     top: 10px;
     left: 10px;
@@ -85,7 +116,7 @@
   .sign-up {
     white-space: nowrap; /* Prevent text from wrapping */
     position: absolute;
-    top: 505px;
+    top: 515px;
     left: 320px;
     border-radius: 8px;
     border: 1px solid transparent;
@@ -184,12 +215,16 @@
   }
   
   .typing-text {
-    left: 700px;
+    position: absolute;
+    left: 80px;
+    top:320px;
     overflow: hidden;
     white-space: nowrap;
     display: inline-block;
-    animation: typing 2s steps(40, end) infinite;
-    color:#522a80;
+    animation: typing 2.5s steps(40, end) infinite;
+    font-size: 53px;
+    font-family: Arial, sans-serif;
+    color:#3d225b;
   }
   
   @-webkit-keyframes Gradient {
