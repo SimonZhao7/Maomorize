@@ -4,23 +4,22 @@ import Upload from "./routes/Upload";
 import Review from "./routes/Review";
 import Feedback from "./routes/Feedback";
 import View from "./routes/View";
+import Landing from "./routes/Landing";
 // Loaders
 import { loader as feedbackLoader } from "./routes/Feedback";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: null,
-    children: [
-      {
-        path: "upload",
-        element: <Upload />,
-      },
-      {
-        path: "view",
-        element: <View />,
-      },
-    ],
+    element: <Landing />,
+  },
+  {
+    path: "/upload",
+    element: <Upload />,
+  },
+  {
+    path: "/view",
+    element: <View />,
   },
   {
     path: "/review",
