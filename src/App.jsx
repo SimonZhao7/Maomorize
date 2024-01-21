@@ -5,6 +5,8 @@ import Review from "./routes/Review";
 import Feedback from "./routes/Feedback";
 import View from "./routes/View";
 import Landing from "./routes/Landing";
+import SignUp from "./routes/SignUp";
+import Login from "./routes/Login";
 // Loaders
 import { loader as feedbackLoader } from "./routes/Feedback";
 
@@ -20,6 +22,14 @@ const router = createBrowserRouter([
   {
     path: "/view",
     element: <View />,
+  },
+  {
+    path: "/signup",
+    element: <SignUp />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
   {
     path: "/review",
