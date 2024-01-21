@@ -8,6 +8,7 @@ import Landing from './routes/Landing';
 import SignUp from './routes/SignUp';
 import Login from './routes/Login';
 import Forgot from './routes/Forgot';
+import Component from './routes/Component';
 // Loaders
 import { loader as feedbackLoader } from './routes/Feedback';
 
@@ -39,6 +40,10 @@ const router = createBrowserRouter([
 	{
 		path: '/forgot',
 		element: <Forgot />,
+	},
+	{
+		path: '/component',
+		element: <Component />,
 	},
 	{
 		path: '/feedback/:id',
