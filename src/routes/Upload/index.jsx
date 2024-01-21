@@ -46,10 +46,10 @@ const Upload = () => {
 	return (
 		<div>
 			{/* Heading */}
-			<h1>Upload Your Notes</h1>
+			<h1 className='heading'>Upload Your Notes</h1>
 
 			{/* Input fields */}
-			<label htmlFor='title'>Title:</label>
+			<label className='title'>Title:</label>
 			<input
 				type='text'
 				id='title'
