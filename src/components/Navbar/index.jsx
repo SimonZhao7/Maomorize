@@ -62,7 +62,7 @@ const Navbar = () => {
       </div>
 
       <div>
-        <img className="orange-cat" src="/src/assets/imgs/orange-cat.png" />
+        <img className="orange-cat" src="/images/orange-cat.png" />
       </div>
 
       <div>
