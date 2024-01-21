@@ -21,6 +21,7 @@ const Forgot = () => {
 	};
 
 	return (
+
 		<div className='forgot-wrapper'>
 			<div className='forgot-container'>
 				<label htmlFor='email'>Email:</label>
@@ -46,7 +47,7 @@ const Forgot = () => {
 			</div>
 			<div className='forgot-mao-background'>
 				&nbsp;
-			</div>
+		</div>
 		</div>
 		
 	);
