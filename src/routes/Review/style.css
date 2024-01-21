@@ -1,4 +1,4 @@
-.main {
+.review_main {
     display: flex;
     height: 100%;
     padding-top: 60px;
@@ -11,7 +11,14 @@
     padding: 20px;
     padding: 40px;
     font-size: 16px;
+    font-weight: 500;
     font-family: 'Boboto', sans-serif;
+    resize: none;
+}
+
+#notebox:disabled {
+    background-color: white;
+    color: black;
 }
 
 .blurt-wrapper {
@@ -25,7 +32,7 @@
 
 .blurt-header {
     font-size: 48px;
-    font-weight: 600;
+    font-weight: 700;
     font-family: 'Montserrat', sans-serif;
     margin: 0;
 }

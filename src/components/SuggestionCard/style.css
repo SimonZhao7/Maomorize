@@ -1,0 +1,39 @@
+.wrapper {
+    width: 100%;
+    padding: 20px;
+    background-color: white;
+    margin: 20px 0;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 3px 3px #b5b5b5;
+}
+
+.suggestion-wrapper {
+    flex: 1;
+    overflow-y: scroll;
+}
+
+
+.pill-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+}
+
+.pill {
+    border-radius: 9999px;
+    color: white;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    gap: 10px;
+}
+
+.fix-info {
+    background-color: #167FA2;
+}
+
+.missing-info {
+    background-color: #d13f3f;
+}
