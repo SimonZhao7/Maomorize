@@ -10,7 +10,7 @@
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h2 {
+.signup-h2 {
 	text-align: center;
 	color: #333;
 }
@@ -19,20 +19,20 @@ h2 {
 	margin-bottom: 15px;
 }
 
-label {
+.signup-label {
 	display: block;
 	margin-bottom: 5px;
 	font-weight: bold;
 }
 
-input {
+.signup-input {
 	width: 100%;
 	padding: 8px;
 	margin-bottom: 10px;
 	box-sizing: border-box;
 }
 
-button {
+.signup-button {
 	width: 100%;
 	padding: 10px;
 	background-color: #4caf50;
@@ -42,6 +42,6 @@ button {
 	cursor: pointer;
 }
 
-button:hover {
+.signup-button:hover {
 	background-color: #45a049;
 }
