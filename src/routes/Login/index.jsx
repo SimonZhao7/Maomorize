@@ -1,7 +1,11 @@
 import './style.css';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { signInWithEmailAndPassword } from 'firebase/auth';
+import {
+	signInWithEmailAndPassword,
+	signInWithPopup,
+	GoogleAuthProvider,
+} from 'firebase/auth';
 import { auth } from '../../../firebase'; // Assuming you have initialized Firebase in 'firebase.js' file
 
 const Login = () => {
@@ -20,6 +24,20 @@ const Login = () => {
 		}
 	};
 
+	const handleGoogleLogin = async () => {
+		try {
+			// Set up GoogleAuthProvider
+			const provider = new GoogleAuthProvider();
+			// Sign in with Google using a pop-up window
+			const result = await signInWithPopup(auth, provider);
+			const user = result.user;
+			console.log('User logged in with Google successfully!', user);
+			// Redirect user to View Page
+		} catch (error) {
+			console.error('Error logging in with Google:', error.message);
+		}
+	};
+
 	return (
 		<div>
 			<input
@@ -33,6 +51,7 @@ const Login = () => {
 				onChange={(e) => setPassword(e.target.value)}
 			/>
 			<button onClick={handleLogin}>Login</button>
+			<button onClick={handleGoogleLogin}>Continue with Google</button>
 		</div>
 	);
 };
