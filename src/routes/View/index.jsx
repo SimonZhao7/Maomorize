@@ -2,13 +2,16 @@
 
 import { useState, useEffect } from 'react';
 import './View.css';
+import Navbar from "../../components/Navbar";
 import { collection, getDocs, where, query } from 'firebase/firestore';
 import { db } from '../../../firebase';
 import { Link } from 'react-router-dom';
 
 const View = ({ userId }) => {
+	
 	const [userDocuments, setUserDocuments] = useState([]);
 
+	
 	useEffect(() => {
 		const fetchUserDocuments = async () => {
 			try {
@@ -31,6 +34,8 @@ const View = ({ userId }) => {
 	}, [userId]); // Trigger the effect when userId changes
 
 	return (
+		<div className="view-wrapper">
+		<Navbar/>
 		<div className='view-container'>
 			{/* Heading */}
 			<h1>View Page</h1>
@@ -51,22 +56,32 @@ const View = ({ userId }) => {
 				<p>No documents found for the user.</p>
 			)}
 
+			
+
 			{/* Box for adding a new document */}
 			<div>
 				<h2 className='add-document-box'>
 					Add New Document
 					<Link to='/Upload'>
-						<button>Add Document</button>
+						<button class="add-button"> + </button>
 					</Link>
 				</h2>
 			</div>
 		</div>
+		</div>
 	);
 };
 
+
+/* View.css */
+
+  /* Add any additional styling for your view-container here */
+  
 // Set default props
 View.defaultProps = {
 	userId: 'user123',
 };
 
 export default View;
+
+
