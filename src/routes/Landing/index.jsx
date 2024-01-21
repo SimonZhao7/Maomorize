@@ -2977,26 +2977,41 @@ const Landing = () => {
 
       <div class="container">
         <div class="headline-container">
-          <p class="headline">
-            Purrfect your memory <br /> skills & study habits
-            <span class="move-up"> with </span> <br />
-            <span class="typing-text">Maomorize</span>
+          <p class="headline1">
+            Purrfect your memory 
           </p>
+
+          <p class="headline2">
+            skills & study habits with
+          </p>
+
+          <p class="typing-text">
+            Maomorize
+          </p>
+
         </div>
 
-        <p class="sub_headline">
-          {" "}
-          Elevate your learning experience with fun <br />
-          and effective techniques{" "}
+        <p class="sub_headline1">
+          Elevate your learning experience with fun 
         </p>
 
-        <p class="logo"> Logo </p>
+        <p class = "sub_headline2">
+          and effective techniques
+        </p>
+
+        <p class="logo"> Maomorize </p>
+
+        
 
         <p class="no_acc"> Don't have an account? </p>
         <div class="button-container">
           <button class="sign-up">Sign up for free!</button>
         </div>
 
+        <div class="logo_img">
+          <img src="/src/assets/imgs/maomorize_logo.png" alt="Logo Img" />
+        </div>
+        
         <div class="header">
           <button class="sign-in">Sign In</button>
           <button class="go-to-maomorize">Go to Maomorize</button>
