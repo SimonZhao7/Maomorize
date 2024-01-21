@@ -3,32 +3,44 @@
 import { useState, useEffect } from 'react';
 import './View.css';
 import { collection, getDocs, where, query } from 'firebase/firestore';
-import { db } from '../../../firebase';
+import { db, auth } from '../../../firebase'; // Assuming auth is the Firebase authentication instance
 import { Link } from 'react-router-dom';
 
-const View = ({ userId }) => {
+const View = () => {
 	const [userDocuments, setUserDocuments] = useState([]);
+	const [userId, setUserId] = useState(null);
 
 	useEffect(() => {
-		const fetchUserDocuments = async () => {
-			try {
-				const q = query(collection(db, 'notes'), where('userId', '==', userId));
-				const querySnapshot = await getDocs(q);
-
-				const documents = [];
-				querySnapshot.forEach((doc) => {
-					documents.push({ id: doc.id, ...doc.data() });
-				});
-
-				setUserDocuments(documents);
-			} catch (error) {
-				console.error('Error fetching documents:', error);
+		const unsubscribe = auth.onAuthStateChanged((user) => {
+			if (user) {
+				// User is signed in, get their UID
+				setUserId(user.uid);
+				fetchUserDocuments(user.uid);
+			} else {
+				// User is signed out, set userId to null or handle as needed
+				setUserId(null);
+				setUserDocuments([]);
 			}
-		};
+		});
 
-		// Call the fetchUserDocuments function directly
-		fetchUserDocuments();
-	}, [userId]); // Trigger the effect when userId changes
+		return () => unsubscribe(); // Cleanup the subscription
+	}, []); // Effect runs once on component mount
+
+	const fetchUserDocuments = async (uid) => {
+		try {
+			const q = query(collection(db, 'notes'), where('userId', '==', uid));
+			const querySnapshot = await getDocs(q);
+
+			const documents = [];
+			querySnapshot.forEach((doc) => {
+				documents.push({ id: doc.id, ...doc.data() });
+			});
+
+			setUserDocuments(documents);
+		} catch (error) {
+			console.error('Error fetching documents:', error);
+		}
+	};
 
 	return (
 		<div className='view-container'>
@@ -44,7 +56,7 @@ const View = ({ userId }) => {
 							<br />
 							<strong>Text:</strong> {document.text}
 						</div>
-						//! Change Text to studyNext after implementing the timestamp
+						// Change Text to studyNext after implementing the timestamp
 					))}
 				</div>
 			) : (
@@ -62,11 +74,6 @@ const View = ({ userId }) => {
 			</div>
 		</div>
 	);
-};
-
-// Set default props
-View.defaultProps = {
-	userId: 'user123',
 };
 
 export default View;

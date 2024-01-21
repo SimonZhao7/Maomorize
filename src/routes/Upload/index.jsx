@@ -1,47 +1,59 @@
-import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 import "./Upload.css";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { db } from "../../../firebase";
-// Components
+import { db, auth } from "../../../firebase";
 import Navbar from "../../components/Navbar";
+import { useNavigate } from "react-router-dom";
 
 const Upload = () => {
   const [inputText, setInputText] = useState("");
-  const [title, setTitle] = useState("A new note");
-  const [userId] = useState("user123"); // Replace 'user123' with the actual user ID
+  const [title, setTitle] = useState("");
+  const [userId, setUserId] = useState(null);
   const navigate = useNavigate();
 
-  // Asynchronous function to handle the button click and save the input text
+  // Get the user ID from the authentication state
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUserId(user.uid);
+      } else {
+        setUserId(null);
+      }
+    });
+
+    return () => unsubscribe();
+  }, []);
+
   const handleButtonClick = async () => {
-    // You can perform any additional logic or validation here before saving
     const savedText = inputText;
 
-    // Save the text to Firestore
-    // Save the text to the 'notes' collection
-    const notesCollection = collection(db, "notes");
+    if (userId) {
+      // Save the text to Firestore
+      const notesCollection = collection(db, "notes");
 
-    // Add a new document to the 'notes' collection with additional fields
-    await addDoc(notesCollection, {
-      userId: userId,
-      title: title,
-      text: savedText,
-      dateCreated: serverTimestamp(),
-      lastStudied: null, // Default value is null
-      nextStudy: null, // Default value is null
-      interval: 0, // Default value is 0
-    });
-    navigate("/view");
+      await addDoc(notesCollection, {
+        userId: userId,
+        title: title,
+        text: savedText,
+        dateCreated: serverTimestamp(),
+        lastStudied: null,
+        nextStudy: null,
+        interval: 0,
+      });
+
+      navigate("/view");
+      console.log("Text saved to Firestore:", savedText);
+    } else {
+      console.error("User not logged in.");
+    }
   };
 
-  // Function to count words and characters
   const countWordsAndCharacters = () => {
     const words = inputText.split(/\s+/).filter((word) => word !== "").length;
     const characters = inputText.length;
     return { words, characters };
   };
 
-  // Display word and character count
   const { words, characters } = countWordsAndCharacters();
 
   return (
