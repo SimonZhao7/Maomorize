@@ -1,7 +1,7 @@
 .navbar {
     width: 100%;
     height: 60px;
-    background-image: url('src/assets/imgs/mao_background.png');
+    background-image: url('../../../src/assets/imgs/mao_background.png');
     background-size: cover; /* Adjust the size property as needed */    
     display: flex;
     align-items: center;
