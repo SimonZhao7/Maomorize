@@ -50,6 +50,7 @@ const Login = () => {
     <div className="container">
       <div className="input-group">
         <input
+          className="login-input"
           type="email"
           placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
@@ -58,14 +59,19 @@ const Login = () => {
 
       <div className="input-group">
         <input
+          className="login-input"
           type="password"
           placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
         />
       </div>
 
-      <button onClick={handleLogin}>Login</button>
-      <button onClick={handleGoogleLogin}>Continue with Google</button>
+      <button className="login-button" onClick={handleLogin}>
+        Login
+      </button>
+      <button className="login-button" onClick={handleGoogleLogin}>
+        Continue with Google
+      </button>
 
       {/* Link to Forgot Password */}
       <div className="forgot-password-link">
