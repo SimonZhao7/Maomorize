@@ -41,9 +41,12 @@ const Login = () => {
 
   return (
     <div className="mao-background"> 
+    
     <div className="container">
      
     <div className="login-form">
+      <div className="maomorize-text"> Maomorize </div>
+
       <div className="input-group">
         <input
           type="email"
@@ -67,6 +70,11 @@ const Login = () => {
       <div className="forgot-password-link">
         <Link to="/Forgot">Forgot Password?</Link>
       </div>
+
+    <div className="login-cat"> </div>
+    <div className="speech-bubble"> </div>
+
+      
     </div>
     </div>
     </div>
