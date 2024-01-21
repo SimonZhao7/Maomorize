@@ -60,6 +60,7 @@
 }
 
 .plus-div3{
+    color:white;
     position: relative;
     height: 10px;
     top:-10px;
@@ -92,12 +93,14 @@
 }
 
 .plus-div{
+    color:white;
     position: relative;
     left: 600px;
     animation: floatUpDown 5s ease-in-out infinite;
 }
 
 .dot-div{
+    color:white;
     position: relative;
     left: 300px;
     top: -15px;
@@ -105,24 +108,28 @@
 }
 
 .dot-div2{
+    color:white;
     position: relative;
     left: 650px;
     animation: floatUpDown 5s ease-in-out infinite;
 }
 
 .dot-div3{
+    color:white;
     position: relative;
     left: 1040px;
     animation: floatUpDown 5s ease-in-out infinite;
 }
 
 .ast-div{
+    color:white;
     position: relative;
     left: 750px;
     animation: floatUpDown 5.5s ease-in-out infinite;
 }
 
 .ast-div2{
+    color:white;
     position: relative;
     left: 490px;
     top: 15px;
@@ -130,6 +137,7 @@
 }
 
 .ast-div3{
+    color:white;
     position: relative;
     left: 155px;
     animation: floatUpDown 5.5s ease-in-out infinite;
@@ -145,6 +153,7 @@
 } 
 
 .plus-div2{
+    color:white;
     position: relative;
     left: 830px;
     animation: floatUpDown 6.3s ease-in-out infinite;
