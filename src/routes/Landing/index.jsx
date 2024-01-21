@@ -2978,9 +2978,8 @@ const Landing = () => {
       <div class="container">
         <div class="headline-container">
           <p class="headline">
-            {" "}
             Purrfect your memory <br /> skills & study habits
-            <span class="move-up"> with </span> <br />{" "}
+            <span class="move-up"> with </span> <br />
             <span class="typing-text">Maomorize</span>
           </p>
         </div>
