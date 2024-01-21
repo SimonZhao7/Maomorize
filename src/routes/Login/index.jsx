@@ -40,7 +40,10 @@ const Login = () => {
   };
 
   return (
+    <div className="mao-background"> 
     <div className="container">
+     
+    <div className="login-form">
       <div className="input-group">
         <input
           type="email"
@@ -57,13 +60,15 @@ const Login = () => {
         />
       </div>
 
-      <button onClick={handleLogin}>Login</button>
-      <button onClick={handleGoogleLogin}>Continue with Google</button>
+      <button className="login-button" onClick={handleLogin}>Login</button>
+      <button className="continue-button" onClick={handleGoogleLogin}>Continue with Google</button>
 
       {/* Link to Forgot Password */}
       <div className="forgot-password-link">
         <Link to="/Forgot">Forgot Password?</Link>
       </div>
+    </div>
+    </div>
     </div>
   );
 };
