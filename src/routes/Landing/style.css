@@ -36,7 +36,7 @@
     margin-bottom: 20px;
     position: absolute;
     left: 80px;
-    top: 240px; /* Adjust the top position if necessary */
+    top: 230px; /* Adjust the top position if necessary */
     text-align: left;
     color: white;
     font-size: 53px;
@@ -46,7 +46,7 @@
   .sub_headline1 {
     position: absolute;
     left: 80px;
-    top: 425px; /* Adjust the top position if necessary */
+    top: 440px; /* Adjust the top position if necessary */
     text-align: left;
     color: rgb(198, 194, 194);
     font-size: 22px;
@@ -56,7 +56,7 @@
   .sub_headline2 {
     position: absolute;
     left: 80px;
-    top: 465px; /* Adjust the top position if necessary */
+    top: 475px; /* Adjust the top position if necessary */
     text-align: left;
     color: rgb(198, 194, 194);
     font-size: 22px;
@@ -66,7 +66,7 @@
   .no_acc {
     position: absolute;
     left: 80px;
-    top: 545px; /* Adjust the top position if necessary */
+    top: 570px; /* Adjust the top position if necessary */
     text-align: left;
     color: white;
     font-size: 17px;
@@ -83,7 +83,7 @@
   .sign-up {
     white-space: nowrap; /* Prevent text from wrapping */
     position: absolute;
-    top: 515px;
+    top: 565px;
     left: 320px;
     border-radius: 8px;
     border: 1px solid transparent;
@@ -142,7 +142,7 @@
   .typing-text {
     position: absolute;
     left: 80px;
-    top:320px;
+    top:305px;
     overflow: hidden;
     white-space: nowrap;
     display: inline-block;
