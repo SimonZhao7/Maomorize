@@ -1,9 +1,15 @@
 /* View.css */
 
+.view-wrapper{
+	background-color: var(--light-grey);
+}
+
+
 /* Style for the h1 element */
 .view-container h1 {
 	text-align: center;
 	margin-top: 10px;
+	padding: 60px;
 }
 
 /* Style for the container of user documents */
@@ -24,6 +30,8 @@
 /* Style for the first column (Add New Document) */
 .add-document-box {
 	border: 1px solid #ccc;
+	color: grey; /* Text color */
+	background-color: white; /* Background color */
 	padding: 16px;
 	margin: 15px;
 	width: 200px;
@@ -41,6 +49,11 @@
 	text-align: left; /* Align the title to the left */
 }
 
+.add-button {
+	border-radius: 50%;
+	/* Add other styles as needed */
+  }
+
 /* Style for the second column (User Documents) */
 .document-list {
 	display: flex;
@@ -52,13 +65,16 @@
 /* Style for each document box */
 .document-box {
 	border: 1px solid #ccc;
+	color: grey; /* Text color */
+	background-color: white; /* Background color */
 	padding: 16px;
 	margin: 15px;
 	width: 200px;
 	height: 200px;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 	text-align: center;
-}
+  }
+  
 
 /* Style for the document title */
 .document-box strong {

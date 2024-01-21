@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import './View.css';
+import Navbar from "../../components/Navbar";
 import { collection, getDocs, where, query } from 'firebase/firestore';
 import { db, auth } from '../../../firebase'; // Assuming auth is the Firebase authentication instance
 import { Link } from 'react-router-dom';
@@ -10,6 +11,7 @@ const View = () => {
 	const [userDocuments, setUserDocuments] = useState([]);
 	const [userId, setUserId] = useState(null);
 
+	
 	useEffect(() => {
 		const unsubscribe = auth.onAuthStateChanged((user) => {
 			if (user) {
@@ -43,6 +45,8 @@ const View = () => {
 	};
 
 	return (
+		<div className="view-wrapper">
+		<Navbar/>
 		<div className='view-container'>
 			{/* Heading */}
 			<h1>View Page</h1>
@@ -63,17 +67,22 @@ const View = () => {
 				<p>No documents found for the user.</p>
 			)}
 
+			
+
 			{/* Box for adding a new document */}
 			<div>
 				<h2 className='add-document-box'>
 					Add New Document
 					<Link to='/Upload'>
-						<button>Add Document</button>
+						<button class="add-button"> + </button>
 					</Link>
 				</h2>
 			</div>
+		</div>
 		</div>
 	);
 };
 
 export default View;
+
+

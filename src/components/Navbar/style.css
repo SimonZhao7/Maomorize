@@ -1,9 +1,8 @@
 .navbar {
     width: 100%;
     height: 60px;
-    background-color: var(--purple);
-    list-style: none;
-    color: white;
+    background-image: url('src/assets/imgs/mao_background.png');
+    background-size: cover; /* Adjust the size property as needed */    
     display: flex;
     align-items: center;
     padding: 10px 20px;
@@ -11,4 +10,203 @@
     top: 0;
 }
 
+.home-icon{
+    position: relative;
+    top: -6px;
+    width: 20px;
+    height: 20px;
+}
+
+
+@keyframes floatUpDown {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.white-circle{
+    position: relative;
+    height: 10px;
+    top:10px;
+    left: 230px;
+    animation: floatUpDown 5.3s ease-in-out infinite;
+}
+
+.white-circle2{
+    position: relative;
+    height: 10px;
+    top:10px;
+    left: 1180px;
+    animation: floatUpDown 5.3s ease-in-out infinite;
+}
+
+.white-circle3{
+    position: relative;
+    height: 10px;
+    top:10px;
+    left: 380px;
+    animation: floatUpDown 5.3s ease-in-out infinite;
+}
+
+.white-triangle{
+    position: relative;
+    height: 10px;
+    top:10px;
+    left: 55px;
+    animation: floatUpDown 5.3s ease-in-out infinite;
+}
+
+.plus-div3{
+    position: relative;
+    height: 10px;
+    top:-10px;
+    left: 55px;
+    animation: floatUpDown 5.3s ease-in-out infinite;
+}
+
+.white-triangle2{
+    position: relative;
+    height: 10px;
+    top:10px;
+    left: 950px;
+    animation: floatUpDown 5.3s ease-in-out infinite;
+}
+
+.down-triangle{
+    position: relative;
+    height: 10px;
+    top:5px;
+    left: 1205px;
+    animation: floatUpDown 5s ease-in-out infinite;
+}
+
+.down-triangle2{
+    position: relative;
+    height: 10px;
+    top:10px;
+    left: 270px;
+    animation: floatUpDown 5.3s ease-in-out infinite;
+}
+
+.plus-div{
+    position: relative;
+    left: 600px;
+    animation: floatUpDown 5s ease-in-out infinite;
+}
+
+.dot-div{
+    position: relative;
+    left: 300px;
+    top: -15px;
+    animation: floatUpDown 5s ease-in-out infinite;
+}
+
+.dot-div2{
+    position: relative;
+    left: 650px;
+    animation: floatUpDown 5s ease-in-out infinite;
+}
+
+.dot-div3{
+    position: relative;
+    left: 1040px;
+    animation: floatUpDown 5s ease-in-out infinite;
+}
+
+.ast-div{
+    position: relative;
+    left: 750px;
+    animation: floatUpDown 5.5s ease-in-out infinite;
+}
+
+.ast-div2{
+    position: relative;
+    left: 490px;
+    top: 15px;
+    animation: floatUpDown 5.5s ease-in-out infinite;
+}
+
+.ast-div3{
+    position: relative;
+    left: 155px;
+    animation: floatUpDown 5.5s ease-in-out infinite;
+}
+
+.black-cat {
+    position: relative;
+    display: block;
+    width: 50px; 
+    height: 100%; 
+    left:100px;
+    animation: floatUpDown 4s ease-in-out infinite;
+} 
+
+.plus-div2{
+    position: relative;
+    left: 830px;
+    animation: floatUpDown 6.3s ease-in-out infinite;
+}
+
+.paw {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 30px;
+    left: 300px;
+    animation: floatUpDown 4s ease-in-out infinite; /* Adjust the animation duration (5s) as needed */
+}
+
+/* Add similar keyframes and animation properties for other elements */
+
+
+.orange-cat {
+    position: relative;
+    display: block;
+    width: 100%; 
+    height: 35px; 
+    left:500px;
+    animation: floatUpDown 3.75s ease-in-out infinite;
+} 
+
+.spotted-cat {
+    position: relative;
+    display: block;
+    width: 100%; 
+    height: 35px; 
+    left:700px;
+    animation: floatUpDown 2.75s ease-in-out infinite;
+} 
+
+.paw2 {
+    position: relative;
+    display: block;
+    width: 100%; 
+    height: 30px; 
+    left:970px;
+    animation: floatUpDown 4s ease-in-out infinite;
+} 
+
+
+
+.home-button {
+    position: relative;
+    left: 30px;
+    top: 10px;
+    color: white;
+    border-radius: 4px; /* Add slight border-radius for rounded edges */
+    border: 1px solid transparent;
+    font-size: 15px;
+    font-weight: 500;
+    font-family: inherit;
+    padding: 2px 3px; /* Adjust padding as needed */
+}
+
+.home-button:hover {
+    border-color: white;
+    background-color: white;
+    color: #3d225b;
+}
 
