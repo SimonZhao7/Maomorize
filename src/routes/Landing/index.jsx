@@ -1,8 +1,10 @@
 import './style.css';
+import blurt from '/src/assets/imgs/blurt.png'
 
 const Landing = () => {
 	return (
 		<div className='landing-wrapper'>
+		<img className = 'blurt' src={blurt}/>
 			<svg
 				version='1.1'
 				xmlns='http://www.w3.org/2000/svg'
