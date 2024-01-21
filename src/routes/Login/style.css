@@ -4,116 +4,106 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding-top: 60px;
-}
-
-.input-group {
-	margin-bottom: 20px;
-	width: 300px;
-}
-
-.login-input {
-	width: 100%;
-	padding: 12px;
-	margin-bottom: 16px;
-	font-size: 16px;
-}
-
-.login-button {
-	background-color: #4caf50;
-	color: white;
-	padding: 8px 20px;
-	border: none;
-	border-radius: 4px;
-	cursor: pointer;
-	font-size: 16px;
-	margin-bottom: 16px;
-}
-
-.login-button:hover {
-	background-color: #45a049;
-}
-
-.forgot-password-link {
-	font-family: 'Montserrat', sans-serif;
-	margin-top: 10px;
-}
-
-/* Additional styles for consistency with Upload.css */
-
-/* You can copy and paste styles from Upload.css as needed */
-
-/* For example: */
-/* Login.css */
-
-.container {
+	padding-top: 160px;
+	height: 100vh;
+  }
+  
+  .mao-background {
+	background-image: url('../../assets/imgs/mao_background.png');
 	display: flex;
-	height: 100vh; /* Set the height of the container to full viewport height */
-}
-
-.mao-background {
-	flex: 60%; /* Take up 60% of the container */
-	background: url('../../assets/imgs/') center/cover;
-}
-
-.login-form {
-	flex: 40%; /* Take up 40% of the container */
+	position: relative;
+	flex: 2; /* Take up 2/3 of the container */
+	background-size: cover; /* Zoom in to cover the container */
+	width: calc(100% / 3 * 2); /* Set the width to 2/3 of the container */
+	margin-left: calc(100% / 3); /* Move left by 1/3 of the page */
+  }
+  
+  .login-form {
+	flex: 1; /* Take up 1/3 of the container */
 	display: flex;
 	flex-direction: column;
+	position: relative;
 	align-items: center;
 	justify-content: center;
 	background-color: #fff; /* Adjust as needed */
-}
-
-/* Additional styling for the login form if necessary */
-.input-group {
+	width: calc(100% / 3 * 1); /* Set the width to 2/3 of the container */
+	margin-right: calc(800% / 3); /* Move left by 1/3 of the page */
+  }
+  
+  /* Additional styling for the login form if necessary */
+  .input-group {
 	margin-bottom: 20px;
 	width: 300px;
-}
-
-.login-input {
+  }
+  
+  input {
 	width: 100%;
 	padding: 12px;
 	margin-bottom: 16px;
 	font-size: 16px;
-}
-
-.login-button {
-	background-color: #4caf50;
-	color: white;
+  }
+  
+  .login-button {
+	display: inline-block;
+	background-color: #9e4aff;
+    color: white;
 	padding: 8px 20px;
 	border: none;
 	border-radius: 4px;
 	cursor: pointer;
 	font-size: 16px;
 	margin-bottom: 16px;
-}
+  }
+  
+  .login-button:hover {
+	background-color: #634784;
+    color: white;
+  }
 
-.login-button:hover {
-	background-color: #45a049;
-}
-
-.forgot-password-link {
+  .continue-button {
+	display: inline-block;
+	background-color: #9e4aff;
+    color: white;
+	padding: 8px 20px;
+	border: none;
+	position: relative;
+	top:-290px;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 16px;
+	margin-bottom: 16px;
+	white-space: nowrap;
+  }
+  
+  .continue-button:hover {
+    background-color: #634784;
+    color: white;
+  }
+  
+  .forgot-password-link {
 	font-family: 'Montserrat', sans-serif;
 	margin-top: 10px;
-}
-
-.main {
+	position: relative;
+	top: -60px;
+	white-space: nowrap;
+  }
+  
+  .main {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	padding-top: 60px;
-}
-
-.upload-bg {
+  }
+  
+  .upload-bg {
 	padding: 135px 0 20px;
 	height: 100%;
 	min-height: 100%;
 	background-color: var(--light-gray);
 	overflow-y: scroll;
-}
-
-.upload-title-bar {
+  }
+  
+  .upload-title-bar {
 	position: absolute;
 	top: 60px;
 	padding: 10px 30px;
@@ -123,6 +113,7 @@
 	box-shadow: 0 3px 5px var(--med-gray);
 	display: flex;
 	justify-content: space-between;
-}
-
-/* Continue adding styles as needed */
+  }
+  
+  /* Continue adding styles as needed */
+  
