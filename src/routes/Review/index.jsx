@@ -98,7 +98,7 @@ const Review = () => {
   return (
     <main>
       <Navbar />
-      <section className="main">
+      <section className="review_main">
         <textarea
           disabled={loading}
           id="notebox"
