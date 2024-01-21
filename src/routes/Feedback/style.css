@@ -1,0 +1,15 @@
+.blurt-wrapper {
+    padding: 40px;
+    gap: 20px;
+}
+
+.blurt-header {
+    font-size: 36px;
+}
+
+.blurt-suggest {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    overflow-y: hidden;
+}
