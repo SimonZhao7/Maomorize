@@ -42,7 +42,7 @@ const router = createBrowserRouter([
 		element: <Forgot />,
 	},
 	{
-		path: '/component',
+		path: '/get-token',
 		element: <Component />,
 	},
 	{
