@@ -1,9 +1,8 @@
 /* View.css */
 
-.view-wrapper{
+.view-wrapper {
 	background-color: var(--light-grey);
 }
-
 
 /* Style for the h1 element */
 .view-container h1 {
@@ -52,7 +51,7 @@
 .add-button {
 	border-radius: 50%;
 	/* Add other styles as needed */
-  }
+}
 
 /* Style for the second column (User Documents) */
 .document-list {
@@ -73,8 +72,10 @@
 	height: 200px;
 	box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
 	text-align: center;
-  }
-  
+	display: flex;
+	flex-direction: column; /* Change to column layout */
+	justify-content: space-between; /* Align items with space between */
+}
 
 /* Style for the document title */
 .document-box strong {
@@ -83,4 +84,16 @@
 	font-weight: bold;
 	margin-bottom: 8px;
 	text-align: left; /* Align the title to the left */
+}
+
+/* Style for the Next Study Date */
+.document-box .next-study-date {
+	margin-top: auto; /* Move to the bottom */
+	text-align: center; /* Center the text horizontally */
+	margin-bottom: 8px; /* Add some space below the date */
+}
+
+/* Style for the actual date */
+.document-box .date {
+	text-align: center; /* Center the date horizontally */
 }
