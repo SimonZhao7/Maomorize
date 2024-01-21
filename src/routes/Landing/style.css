@@ -17,6 +17,8 @@
     justify-content: space-evenly;
     overflow: hidden;
     position: relative;
+    height: 100vh;
+    margin: 0;
   }
   
   .headline {
@@ -83,7 +85,7 @@
   .sign-up {
     white-space: nowrap; /* Prevent text from wrapping */
     position: absolute;
-    top: 540px;
+    top: 505px;
     left: 320px;
     border-radius: 8px;
     border: 1px solid transparent;
