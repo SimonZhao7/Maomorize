@@ -67,13 +67,15 @@ const View = () => {
                   navigate(`/view/${document.id}`);
                 }}
               >
-                {document.title}
+                <p className="view-document-title">{document.title}</p>
 
                 <div className="next-study-date">
-                  <strong>Next Study Date:</strong>{" "}
-                  {document.nextStudy
-                    ? format(document.nextStudy.toDate(), "MM/dd/yyyy")
-                    : "No date available"}
+                  <strong className="view-heading">Next Study Date:</strong>
+                  <span>
+                    {document.nextStudy
+                      ? format(document.nextStudy.toDate(), "MM/dd/yyyy")
+                      : "Not available"}
+                  </span>
                 </div>
               </div>
             ))
