@@ -1,14 +1,16 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Upload.css";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { db } from "../../../firebase";
+// Components
+import Navbar from "../../components/Navbar";
 
 const Upload = () => {
-  // State variables to store input text, title, and user ID
   const [inputText, setInputText] = useState("");
-  const [title, setTitle] = useState("");
-  //! do const [userId, setUserId] = useState('user123'); once you implement userid
+  const [title, setTitle] = useState("A new note");
   const [userId] = useState("user123"); // Replace 'user123' with the actual user ID
+  const navigate = useNavigate();
 
   // Asynchronous function to handle the button click and save the input text
   const handleButtonClick = async () => {
@@ -29,8 +31,7 @@ const Upload = () => {
       nextStudy: null, // Default value is null
       interval: 0, // Default value is 0
     });
-
-    console.log("Text saved to Firestore:", savedText);
+    navigate("/view");
   };
 
   // Function to count words and characters
@@ -44,41 +45,35 @@ const Upload = () => {
   const { words, characters } = countWordsAndCharacters();
 
   return (
-    <div className="upload_div">
-      {/* Heading */}
-      <h1 className="heading">Upload Your Notes</h1>
-
-      {/* Input fields */}
-      <label className="upload_label">Title:</label>
-      <input
-        type="text"
-        id="title"
-        className="upload_input"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        //! add a set title userid function
-      />
-      <label htmlFor="text" className="">
-        Text:
-      </label>
-      <textarea
-        id="text"
-        className="upload_input"
-        value={inputText}
-        onChange={(e) => setInputText(e.target.value)}
-      />
-
-      {/* Button to trigger saving with optional custom document ID */}
-      <button className="upload_button" onClick={handleButtonClick}>
-        Submit for Review
-      </button>
-
-      {/* Display word and character count */}
-      <div className="upload_div">
-        <p className="upload_p">Word Count: {words}</p>
-        <p className="upload_p">Character Count: {characters}</p>
-      </div>
-    </div>
+    <main>
+      <Navbar />
+      <section className="upload-bg">
+        <div className="upload-title-bar">
+          <input
+            type="text"
+            className="upload-title-input"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            //! add a set title userid function
+          />
+          <button className="upload_button" onClick={handleButtonClick}>
+            Create Note
+          </button>
+        </div>
+        <textarea
+          id="text"
+          className="upload-editor"
+          value={inputText}
+          placeholder="Enter your notes here..."
+          onChange={(e) => setInputText(e.target.value)}
+        />
+        {/* Display word and character count */}
+        <div className="upload-doc-info">
+          <p className="upload_p">Word Count: {words}</p>
+          <p className="upload_p">Character Count: {characters}</p>
+        </div>
+      </section>
+    </main>
   );
 };
 
