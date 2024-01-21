@@ -3005,7 +3005,7 @@ const Landing = () => {
 					</div>
 
 					<div className='header'>
-						<a href='/signin' className='sign-in'>
+						<a href='/login' className='sign-in'>
 							Sign In
 						</a>
 						<a href='/view' className='go-to-maomorize'>
