@@ -86,25 +86,27 @@ const Review = () => {
     const doc = await addDoc(feedbackPath, {
       userId: "user123",
       noteId: "note123",
+      blurt,
       suggestions: ids,
       created: serverTimestamp(),
     });
 
-    navigate(`/review/${doc.id}`);
+    navigate(`/feedback/${doc.id}`);
     setLoading(false);
   };
 
   return (
     <main>
       <Navbar />
-      <section className="main">
+      <section className="review_main">
         <textarea
+          disabled={loading}
           id="notebox"
           placeholder="Enter your blurt here..."
           value={blurt}
           onChange={(e) => setBlurt(e.target.value)}
         ></textarea>
-        <div className="blurt-wrapper">
+        <aside className="blurt-wrapper">
           <div>
             <h1 className="blurt-header">Blurt it out.</h1>
             <h3 className="blurt-desc">
@@ -116,7 +118,7 @@ const Review = () => {
             onClick={reviewSubmission}
             loading={loading}
           />
-        </div>
+        </aside>
       </section>
     </main>
   );
