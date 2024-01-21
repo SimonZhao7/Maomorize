@@ -1,4 +1,4 @@
-import './style.css';
+import './style.css'; // Import the CSS file
 import { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '../../../firebase'; // Assuming you have initialized Firebase in 'firebase.js' file
@@ -29,17 +29,24 @@ const SignUp = () => {
 	};
 
 	return (
-		<div>
-			<input
-				type='email'
-				placeholder='Email'
-				onChange={(e) => setEmail(e.target.value)}
-			/>
-			<input
-				type='password'
-				placeholder='Password'
-				onChange={(e) => setPassword(e.target.value)}
-			/>
+		<div className='signup-container'>
+			<h2>Sign Up</h2>
+			<div className='input-group'>
+				<label>Email:</label>
+				<input
+					type='email'
+					placeholder='Enter your email'
+					onChange={(e) => setEmail(e.target.value)}
+				/>
+			</div>
+			<div className='input-group'>
+				<label>Password:</label>
+				<input
+					type='password'
+					placeholder='Enter your password'
+					onChange={(e) => setPassword(e.target.value)}
+				/>
+			</div>
 			<button onClick={handleSignup}>Sign Up</button>
 		</div>
 	);
