@@ -42,7 +42,7 @@ const Login = () => {
   return (
     <div className="mao-background"> 
     
-    <div className="container">
+    <div className="login-container">
      
     <div className="login-form">
       <div className="maomorize-text"> Maomorize </div>
