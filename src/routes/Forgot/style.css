@@ -1,0 +1,149 @@
+
+/* Login.css */
+
+.forgot-wrapper {
+	width: 100%;
+	height: 100%;
+	display: flex;
+}
+
+.forgot-label {
+	display: block;
+}
+
+.forgot-container {
+	/* display: flex; */
+	/* flex-direction: column;
+	align-items: center;
+	padding-top: 160px;
+	height: 100vh;
+	flex: 1; */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	flex: 1 0 33%;
+	padding: 40px;
+	box-sizing: border-box;
+}
+
+.forgot-mao-background {
+	background-image: url('../../assets/imgs/mao_background.png');
+	display: flex;
+	/* position: relative; */
+	flex: 2 0 66%; /* Take up 2/3 of the container */
+	background-size: cover; /* Zoom in to cover the container */
+	/* width: calc(100% / 3 * 2); 
+	margin-left: calc(100% / 3);  */
+	flex-shrink: 0;
+}
+
+.login-form {
+	flex: 1;  /* Take up 1/3 of the container */
+	display: flex;
+	flex-direction: column;
+	position: relative;
+	align-items: center;
+	justify-content: center;
+	background-color: #fff; /* Adjust as needed */
+	width: calc(100% / 3 * 1); /* Set the width to 2/3 of the container */
+	margin-right: calc(800% / 3); /* Move left by 1/3 of the page */
+}
+
+
+
+#email {
+	width: 300px;
+	padding: 12px;
+	margin-bottom: 16px;
+	font-size: 16px;
+	position: relative;
+	left: 0;
+	top: 10px;
+}
+
+.login-link {
+	color: white;
+}
+
+.login-link:hover { 
+	color: white;
+}
+
+.forgot-login-button {
+	white-space: nowrap;
+	position: relative;
+	left: 0;
+	text-align: center;
+	display: block;
+	background-color: #9e4aff;
+	color: white;
+	padding: 5px 30px; /* Adjust width by changing the padding */
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 16px;
+	margin: 16px auto;
+}
+
+.forgot-login-button:hover {
+	background-color: #634784;
+	color: white;
+}
+
+.continue-button {
+	display: inline-block;
+	background-color: #9e4aff;
+	color: white;
+	padding: 8px 20px;
+	border: none;
+	position: relative;
+	top: -290px;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 16px;
+	margin-bottom: 16px;
+	white-space: nowrap;
+}
+
+.continue-button:hover {
+	background-color: #634784;
+	color: white;
+}
+
+.forgot-password-link {
+	font-family: 'Montserrat', sans-serif;
+	margin-top: 10px;
+	position: relative;
+	top: -60px;
+	white-space: nowrap;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 60px;
+}
+
+.upload-bg {
+	padding: 135px 0 20px;
+	height: 100%;
+	min-height: 100%;
+	background-color: var(--light-gray);
+	overflow-y: scroll;
+}
+
+.upload-title-bar {
+	position: absolute;
+	top: 60px;
+	padding: 10px 30px;
+	width: 100%;
+	background-color: white;
+	display: flex;
+	box-shadow: 0 3px 5px var(--med-gray);
+	display: flex;
+	justify-content: space-between;
+}
+
+/* Continue adding styles as needed */

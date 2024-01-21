@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./Upload.css";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
@@ -10,6 +10,7 @@ const Upload = () => {
   const [title, setTitle] = useState("A new note");
   const [userId, setUserId] = useState(null);
   const navigate = useNavigate();
+  const fileRef = useRef(null);
 
   // Get the user ID from the authentication state
   useEffect(() => {
@@ -23,6 +24,10 @@ const Upload = () => {
 
     return () => unsubscribe();
   }, []);
+
+  const handleFileChange = (e) => {
+
+  }
 
   const handleButtonClick = async () => {
     const savedText = inputText;
@@ -67,9 +72,26 @@ const Upload = () => {
             onChange={(e) => setTitle(e.target.value)}
             //! add a set title userid function
           />
-          <button className="upload_button" onClick={handleButtonClick}>
-            Create Note
-          </button>
+          <div className="upload-action-wrapper">
+            <input
+              className="hidden"
+              type="file"
+              accept=".pdf"
+              ref={fileRef}
+              onChange={handleFileChange}
+            />
+            <button
+              className="upload_button upload-blue-btn"
+              onClick={() => {
+                fileRef.current.click();
+              }}
+            >
+              Upload pdf
+            </button>
+            <button className="upload_button" onClick={handleButtonClick}>
+              Create Note
+            </button>
+          </div>
         </div>
         <textarea
           id="text"

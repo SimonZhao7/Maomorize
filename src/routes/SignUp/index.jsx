@@ -7,7 +7,7 @@ import { useNavigate } from "react-router-dom";
 const SignUp = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const handleSignup = async () => {
     try {
@@ -16,7 +16,7 @@ const SignUp = () => {
       console.log("User signed up successfully!");
       // Redirect the user to the View Page
       // You can use a navigation library or set some state to conditionally render the View Page
-	  navigate('/view')
+      navigate("/view");
     } catch (error) {
       // Handle errors, check if the email is already in use, etc.
       console.error("Error signing up:", error.message);
@@ -31,31 +31,83 @@ const SignUp = () => {
     }
   };
 
+  {
+    /* <div className='input-group'>
+						<input
+							type='email'
+							placeholder='Email'
+							onChange={(e) => setEmail(e.target.value)}
+						/>
+					</div>
+
+					<div className='input-group'>
+						<input
+							type='password'
+							placeholder='Password'
+							onChange={(e) => setPassword(e.target.value)}
+						/>
+					</div>
+
+					<button className='login-button' onClick={handleSignup}>
+						Login
+					</button> */
+  }
+
   return (
-    <div className="signup-container">
-      <h2 className="signup-h2">Sign Up</h2>
-      <div className="input-group">
-        <label className="signup-label">Email:</label>
+    <main className="signup-wrapper">
+      <div className="signup-container">
+        {/* <div className="login-form">
+          <h1>Sign Up</h1>
+
+
+        </div> */}
+        <h1>Sign Up</h1>
+		<br />
         <input
+          className="signup-input"
           type="email"
-          placeholder="Enter your email"
+          placeholder="Email"
           onChange={(e) => setEmail(e.target.value)}
         />
-      </div>
-      <div className="input-group">
-        <label className="signup-label">Password:</label>
         <input
+          className="signup-input"
           type="password"
-		  className="signup-input"
-          placeholder="Enter your password"
+          placeholder="Password"
           onChange={(e) => setPassword(e.target.value)}
         />
+        <br />
+        <button className="signup-button" onClick={handleSignup}>
+          Sign Up
+        </button>
       </div>
-      <button className="signup-button" onClick={handleSignup}>
-        Sign Up
-      </button>
-    </div>
+      <div className="signup-mao-background"></div>
+    </main>
   );
+
+  /* 
+				<h2 className='signup-h2'>Sign Up</h2>
+				<div className='input-group'>
+					<label className='signup-label'>Email:</label>
+					<input
+						type='email'
+						placeholder='Enter your email'
+						onChange={(e) => setEmail(e.target.value)}
+					/>
+				</div>
+				<div className='input-group'>
+					<label className='signup-label'>Password:</label>
+					<input
+						type='password'
+						className='signup-input'
+						placeholder='Enter your password'
+						onChange={(e) => setPassword(e.target.value)}
+					/>
+				</div>
+				<button className='signup-button' onClick={handleSignup}>
+					Sign Up
+				</button
+			</div>
+		</div> */
 };
 
 export default SignUp;
