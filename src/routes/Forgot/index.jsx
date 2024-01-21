@@ -21,30 +21,35 @@ const Forgot = () => {
 	};
 
 	return (
-		<div className='mao-background'>
-			<div className='container'>
-				<div className='login-form'>
-					<div className='input-group'>
-						<label htmlFor='email'>Email:</label>
-						<input
-							type='email'
-							id='email'
-							placeholder='Enter your email'
-							onChange={(e) => setEmail(e.target.value)}
-						/>
-					</div>
 
-					<button className='login-button' onClick={handleResetPassword}>
+		<div className='forgot-wrapper'>
+			<div className='forgot-container'>
+				<label htmlFor='email'>Email:</label>
+				<input
+					type='email'
+					id='email'
+					placeholder='Enter your email'
+					onChange={(e) => setEmail(e.target.value)}
+				/>
+	
+					
+					<button className='forgot-login-button' onClick={handleResetPassword}>
 						Reset Password
 					</button>
 
-					{/* Link to Login Page */}
-					<div className='login-button'>
-						<Link to='/login'>Remember your password?</Link>
+				
+					<div className='forgot-login-button'>
+						<Link className='login-link' to='/login'>Remember your password?</Link>
 					</div>
-				</div>
+				{/* <div className='login-form'>
+				
+				</div> */}
 			</div>
+			<div className='forgot-mao-background'>
+				&nbsp;
 		</div>
+		</div>
+		
 	);
 };
 
