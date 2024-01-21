@@ -14,14 +14,13 @@
 }
 
 /* Style for the text input and textarea */
-label {
+.upload_label {
 	font-size: 18px;
 	font-weight: bold;
 	margin-bottom: 8px;
 }
 
-input,
-textarea {
+.upload_input {
 	width: 100%;
 	padding: 12px;
 	margin-bottom: 16px;
@@ -29,7 +28,7 @@ textarea {
 }
 
 /* Style for the button */
-button {
+.upload_button {
 	background-color: #4caf50;
 	color: white;
 	padding: 12px 20px;
@@ -39,17 +38,18 @@ button {
 	font-size: 16px;
 }
 
-button:hover {
+.upload_button:hover {
 	background-color: #45a049;
 }
 
 /* Style for the word and character count */
-div {
+.upload_div {
 	margin-top: 20px;
+	color: rgba(255, 255, 255, 0.87);
 }
 
 /* Style for the word count and character count paragraphs */
-p {
+.upload_p {
 	font-size: 16px;
 	margin: 8px 0;
 }

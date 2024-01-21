@@ -29,11 +29,13 @@ const Feedback = () => {
   return (
     <main>
       <Navbar />
-      <section className="main">
+      <section className="review_main">
         <textarea disabled={true} id="notebox" value={blurt}></textarea>
         <aside className="blurt-wrapper">
           <div className="blurt-suggest">
-            <h1 className="blurt-header">Review your blurt.</h1>
+            <h1 className="blurt-header" id="blurt-mid-size">
+              Review your blurt.
+            </h1>
             <div className="suggestion-wrapper">
               {suggestions.map((s) => (
                 <SuggestionCard key={s.id} suggestion={s} />

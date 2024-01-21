@@ -1,4 +1,4 @@
-.main {
+.review_main {
     display: flex;
     height: 100%;
     padding-top: 60px;
@@ -13,6 +13,7 @@
     font-size: 16px;
     font-weight: 500;
     font-family: 'Boboto', sans-serif;
+    resize: none;
 }
 
 #notebox:disabled {
