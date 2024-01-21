@@ -2998,7 +2998,7 @@ const Landing = () => {
 					<div className='logo-wrapper'>
 						<img
 							className='logo_img'
-							src='/src/assets/imgs/maomorize_logo.png'
+							src='/images/maomorize_logo.png'
 							alt='Logo Img'
 						/>
 						<p className='logo'> Maomorize </p>
