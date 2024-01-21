@@ -1,21 +1,128 @@
-/* Add your existing styles here */
+/* Login.css */
 
 .container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	padding-top: 60px;
 }
 
 .input-group {
-	margin-bottom: 10px;
+	margin-bottom: 20px;
+	width: 300px;
 }
 
-/* Styles for the buttons */
+input {
+	width: 100%;
+	padding: 12px;
+	margin-bottom: 16px;
+	font-size: 16px;
+}
+
 button {
+	background-color: #4caf50;
+	color: white;
+	padding: 8px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 16px;
+	margin-bottom: 16px;
+}
+
+button:hover {
+	background-color: #45a049;
+}
+
+.forgot-password-link {
+	font-family: 'Montserrat', sans-serif;
 	margin-top: 10px;
 }
 
-/* Additional styles for better spacing */
-button + button {
-	margin-top: 5px;
+/* Additional styles for consistency with Upload.css */
+
+/* You can copy and paste styles from Upload.css as needed */
+
+/* For example: */
+/* Login.css */
+
+.container {
+	display: flex;
+	height: 100vh; /* Set the height of the container to full viewport height */
 }
+
+.mao-background {
+	flex: 60%; /* Take up 60% of the container */
+	background: url('../../assets/imgs/') center/cover;
+}
+
+.login-form {
+	flex: 40%; /* Take up 40% of the container */
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background-color: #fff; /* Adjust as needed */
+}
+
+/* Additional styling for the login form if necessary */
+.input-group {
+	margin-bottom: 20px;
+	width: 300px;
+}
+
+input {
+	width: 100%;
+	padding: 12px;
+	margin-bottom: 16px;
+	font-size: 16px;
+}
+
+button {
+	background-color: #4caf50;
+	color: white;
+	padding: 8px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	font-size: 16px;
+	margin-bottom: 16px;
+}
+
+button:hover {
+	background-color: #45a049;
+}
+
+.forgot-password-link {
+	font-family: 'Montserrat', sans-serif;
+	margin-top: 10px;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 60px;
+}
+
+.upload-bg {
+	padding: 135px 0 20px;
+	height: 100%;
+	min-height: 100%;
+	background-color: var(--light-gray);
+	overflow-y: scroll;
+}
+
+.upload-title-bar {
+	position: absolute;
+	top: 60px;
+	padding: 10px 30px;
+	width: 100%;
+	background-color: white;
+	display: flex;
+	box-shadow: 0 3px 5px var(--med-gray);
+	display: flex;
+	justify-content: space-between;
+}
+
+/* Continue adding styles as needed */
