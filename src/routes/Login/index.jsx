@@ -6,6 +6,7 @@ import {
 	GoogleAuthProvider,
 } from 'firebase/auth';
 import { auth } from '../../../firebase'; // Assuming you have initialized Firebase in 'firebase.js' file
+import { Link } from 'react-router-dom';
 
 const Login = () => {
 	const [email, setEmail] = useState('');
@@ -15,7 +16,7 @@ const Login = () => {
 		try {
 			await signInWithEmailAndPassword(auth, email, password);
 			console.log('User logged in successfully!');
-			// redirect user to View Page
+			// Redirect user to View Page
 		} catch (error) {
 			console.error('Error logging in:', error.message);
 		}
@@ -36,19 +37,30 @@ const Login = () => {
 	};
 
 	return (
-		<div>
-			<input
-				type='email'
-				placeholder='Email'
-				onChange={(e) => setEmail(e.target.value)}
-			/>
-			<input
-				type='password'
-				placeholder='Password'
-				onChange={(e) => setPassword(e.target.value)}
-			/>
+		<div className='container'>
+			<div className='input-group'>
+				<input
+					type='email'
+					placeholder='Email'
+					onChange={(e) => setEmail(e.target.value)}
+				/>
+			</div>
+
+			<div className='input-group'>
+				<input
+					type='password'
+					placeholder='Password'
+					onChange={(e) => setPassword(e.target.value)}
+				/>
+			</div>
+
 			<button onClick={handleLogin}>Login</button>
 			<button onClick={handleGoogleLogin}>Continue with Google</button>
+
+			{/* Link to Forgot Password */}
+			<div className='forgot-password-link'>
+				<Link to='/Forgot'>Forgot Password?</Link>
+			</div>
 		</div>
 	);
 };

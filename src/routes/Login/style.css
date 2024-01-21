@@ -1,0 +1,21 @@
+/* Add your existing styles here */
+
+.container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.input-group {
+	margin-bottom: 10px;
+}
+
+/* Styles for the buttons */
+button {
+	margin-top: 10px;
+}
+
+/* Additional styles for better spacing */
+button + button {
+	margin-top: 5px;
+}
