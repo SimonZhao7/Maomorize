@@ -1,14 +1,22 @@
 import "./style.css";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLoaderData } from "react-router-dom";
 // Components
 import Navbar from "../../components/Navbar";
 import ActionButton from "../../components/ActionButton";
 // Firebase
 import { db } from "../../../firebase";
-import { addDoc, collection, serverTimestamp } from "firebase/firestore";
+import {
+  addDoc,
+  collection,
+  updateDoc,
+  getDoc,
+  doc,
+  serverTimestamp,
+} from "firebase/firestore";
 // OpenAI
 import OpenAI from "openai";
+import { getNextInterval } from "../../util/nextInterval";
 
 const openai = new OpenAI({
   apiKey: import.meta.env.VITE_OPENAI_KEY,
@@ -36,9 +44,16 @@ const systemMessages = [
   },
 ];
 
+export const loader = async ({ params: { id } }) => {
+  const noteDoc = await getDoc(doc(db, "notes", id));
+
+  return { id: noteDoc.id, ...noteDoc.data() };
+};
+
 const Review = () => {
   const [blurt, setBlurt] = useState("");
   const [loading, setLoading] = useState(false);
+  const { id, text, interval } = useLoaderData();
   const navigate = useNavigate();
 
   const createSuggestion = async ([quote, suggestion]) => {
@@ -53,7 +68,7 @@ const Review = () => {
   const reviewSubmission = async (e) => {
     e.preventDefault();
     setLoading(true);
-    const oompletion = await openai.chat.completions.create({
+    const completion = await openai.chat.completions.create({
       messages: [
         ...systemMessages,
         {
@@ -61,11 +76,7 @@ const Review = () => {
         Blurt:
         ${blurt}
         Notes:
-        Supervised learning is the most common type of machine learning. In supervised learning, the algorithm is trained on a dataset of labeled examples. Each example in the dataset consists of an input and an output. The algorithm learns to map the inputs to the outputs so that it can make predictions on new, unseen data. Supervised learning is often used for tasks such as classification, regression, and forecasting.
-
-        Unsupervised learning is used when you have a dataset of unlabeled data. In unsupervised learning, the algorithm is not given any guidance on what the data represents. The algorithm must instead find patterns and structure in the data on its own. Unsupervised learning is often used for tasks such as clustering, dimensionality reduction, and anomaly detection.
-
-        Reinforcement learning is a type of machine learning in which the algorithm learns by interacting with its environment. The algorithm is given a set of actions that it can take, and it receives rewards or penalties for its actions. The algorithm learns to take the actions that are most likely to result in rewards. Reinforcement learning is often used for tasks such as robotics, game playing, and control systems.
+        ${text}
         `,
           role: "user",
         },
@@ -77,13 +88,13 @@ const Review = () => {
       max_tokens: 1000,
     });
 
-    const response = JSON.parse(oompletion.choices[0].message.content);
+    const response = JSON.parse(completion.choices[0].message.content);
     const feedbackPath = collection(db, "feedback");
 
     const ids =
       (await Promise.all(response.suggestions.map(createSuggestion))) ?? [];
 
-    const doc = await addDoc(feedbackPath, {
+    const feedbackDoc = await addDoc(feedbackPath, {
       userId: "user123",
       noteId: "note123",
       blurt,
@@ -91,7 +102,18 @@ const Review = () => {
       created: serverTimestamp(),
     });
 
-    navigate(`/feedback/${doc.id}`);
+    const nxtInterval = getNextInterval(interval);
+    const date = new Date();
+    date.setHours(0, 0, 0, 0);
+    const nextStudy = new Date(date.getTime() + 86400000 * nxtInterval);
+
+    await updateDoc(doc(db, "notes", id), {
+      interval: nxtInterval,
+      lastStudied: serverTimestamp(),
+      nextStudy,
+    });
+
+    navigate(`/feedback/${feedbackDoc.id}`);
     setLoading(false);
   };
 
